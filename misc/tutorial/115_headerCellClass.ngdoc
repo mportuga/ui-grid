@@ -57,6 +57,9 @@ set the background and foreground color of the header if the sort direction is A
     var gridTestUtils = require('../../test/e2e/gridTestUtils.spec.js');
 
     describe( '115 header cell class', function() {
+      // Reload the page before each test if on Firefox. Chrome does it automatically.
+      gridTestUtils.firefoxReload();
+
       it('grid should have two visible columns', function () {
         gridTestUtils.expectHeaderColumnCount( 'grid1', 2 );
       });
@@ -75,4 +78,3 @@ set the background and foreground color of the header if the sort direction is A
     });
   </file>
 </example>
-

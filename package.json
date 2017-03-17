@@ -77,7 +77,7 @@
     "protractor": "~4.0.14",
     "protractor-accessibility-plugin": "^0.3.0",
     "requirejs": "^2.3.3",
-    "selenium-server-standalone-jar": "2.45.0",
+    "selenium-server-standalone-jar": "2.53.1",
     "selenium-webdriver": "~2.53.0",
     "semver": "~2.2.1",
     "shelljs": "~0.2.6",

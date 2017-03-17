@@ -2,9 +2,17 @@
 @name Tutorial: 099 Upgrading
 @description
 
+## Upgrading from 3.x to 4.x ##
+
+ui-grid 4.x is completely backwards compatible. All configuration remains the same. The only major
+change in ui-grid 4.x vs. 3.x is that support for angular versions bellow 1.4 was dropped. We
+intend to make a lot of performance upgrades to ui-grid in this version, as well as clean up and
+streamline the codebase.
+
+
 ## Upgrading from 2.x to 3.0 ##
 
-ui-grid 3.0 is a substantial upgrade from ng-grid 2.x, with the majority of the code base having 
+ui-grid 3.0 is a substantial upgrade from ng-grid 2.x, with the majority of the code base having
 been rewritten.  Where possible the configuration is backward compatible, but some concepts have
 changed in ways that require code change to integrate.
 
@@ -53,7 +61,7 @@ $scope.gridOptions = {
       {field: 'id', displayName: 'Id'},
       {field: 'name', displayName: 'Name'},
       {displayName: 'Edit', cellTemplate: '<button id="editBtn" type="button" class="btn-small" >Edit</button> '}
-    ]    
+    ]
   };
 </pre>
 
@@ -64,7 +72,7 @@ $scope.gridOptions = {
       {field: 'id', displayName: 'Id'},
       {field: 'name', displayName: 'Name'},
       {name: 'edit', displayName: 'Edit', cellTemplate: '<button id="editBtn" type="button" class="btn-small" ng-click="edit(row.entity)" >Edit</button> '}
-    ]    
+    ]
   };
 </pre>
 
@@ -99,7 +107,7 @@ $scope.gridOptions = {
       {field: 'id', displayName: 'Id'},
       {field: 'name', displayName: 'Name'},
       {name: 'edit', displayName: 'Edit', cellTemplate: '<button id="editBtn" type="button" class="btn-small" ng-click="edit(row.entity)" >Edit</button> '}
-    ]    
+    ]
   };
 </pre>
 
@@ -110,7 +118,7 @@ $scope.gridOptions = {
       {field: 'id', displayName: 'Id'},
       {field: 'name', displayName: 'Name'},
       {name: 'edit', displayName: 'Edit', cellTemplate: '<button id="editBtn" type="button" class="btn-small" ng-click="grid.appScope.edit(row.entity)" >Edit</button> '}
-    ]    
+    ]
   };
 </pre>
 
@@ -148,4 +156,3 @@ individual columns rather than as a single filterOptions element.
 
 Sorting behaviour changes somewhat, and again sort options are moved onto the individual columns,
 along with provision of a "priority" element within the sortOptions.
-  

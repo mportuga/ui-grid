@@ -55,20 +55,26 @@ MODEL\_COL\_FIELD which will be replaced with row.entity.field.  Use MODEL\_COL\
   </file>
   <file name="scenario.js">
     var gridTestUtils = require('../../test/e2e/gridTestUtils.spec.js');
-    it('grid should have one visible row and four columns', function () {
-      gridTestUtils.expectRowCount( 'grid1', 1 );
-      gridTestUtils.expectHeaderColumnCount( 'grid1', 4 );
-    });
 
-    it('headers as specified', function () {
-      gridTestUtils.expectHeaderCellValueMatch( 'grid1', 0, 'First Name' );
-      gridTestUtils.expectHeaderCellValueMatch( 'grid1', 1, '1st Friend' );
-      gridTestUtils.expectHeaderCellValueMatch( 'grid1', 2, 'City' );
-      gridTestUtils.expectHeaderCellValueMatch( 'grid1', 3, 'Get Zip' );
-    });
+    describe('106 Binding', function() {
+      // Reload the page before each test if on Firefox. Chrome does it automatically.
+      gridTestUtils.firefoxReload();
 
-    it('row values should be as expected', function () {
-      gridTestUtils.expectRowValuesMatch( 'grid1', 0, [ 'Cox', 'friend0', 'Laurel', '39565' ]);
+      it('grid should have one visible row and four columns', function () {
+        gridTestUtils.expectRowCount( 'grid1', 1 );
+        gridTestUtils.expectHeaderColumnCount( 'grid1', 4 );
+      });
+
+      it('headers as specified', function () {
+        gridTestUtils.expectHeaderCellValueMatch( 'grid1', 0, 'First Name' );
+        gridTestUtils.expectHeaderCellValueMatch( 'grid1', 1, '1st Friend' );
+        gridTestUtils.expectHeaderCellValueMatch( 'grid1', 2, 'City' );
+        gridTestUtils.expectHeaderCellValueMatch( 'grid1', 3, 'Get Zip' );
+      });
+
+      it('row values should be as expected', function () {
+        gridTestUtils.expectRowValuesMatch( 'grid1', 0, [ 'Cox', 'friend0', 'Laurel', '39565' ]);
+      });
     });
-  </file>  
+  </file>
 </example>
